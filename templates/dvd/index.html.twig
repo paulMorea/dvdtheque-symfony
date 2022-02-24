@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset("css/datatable.css")}}">
+{% endblock %}
+
+{% block title %}MA DVDTHÈQUE
+{% endblock %}
+{% block body %}
+
+	<div class="container-fluid" id="containerUser">
+		<div class="row" id='rowTitle'>
+			<h1 class='text-center'><img id='logoIndex' src='{{asset("images/dvdtheque.png")}}'>MA DVDTHÈQUE</h1>
+		</div>
+		<div class="row" id='rowData'>
+			<div class=' col' id='colData'>
+				<table id='dvds' data-order='[[ 1, "asc" ]]' class="display responsive nowrap  caption-top">
+					<caption id='captionDvd'>Liste des DVDs :</caption>
+					<thead>
+						<tr>
+							<th class="text-center">Affiche</th>
+							<th class="text-center">Titre</th>
+							<th class="text-center">Date de sortie</th>
+							<th class="text-center">Réalisateur</th>
+							<th class="text-center">Durée</th>
+							<th class="text-center">Catégorie</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{% for dvd in dvds %}
+								{% if dvd.getCover() %}
+									<td class="d-flex justify-content-center"><img class="cover" src='images/{{ dvd.getCover() }}'></td>
+								{% else %}
+									<td class="d-flex justify-content-center"><img class='cover' src='{{asset("images/dvd.png")}}'></td>
+								{% endif %}
+								<td class="align-middle text-center" id='dvdTitle'><span id='title'>{{ dvd.getTitre()|nl2br }}</span></td>
+								<td class="align-middle text-center">{{ dvd.getDate().format('d-m-Y') }}</td>
+								<td class="align-middle text-center" id='dvdRealisateur'>{{ dvd.getRealisateur() }}</td>
+								<td class="align-middle text-center">{{ dvd.getDescription()|raw }}</td>
+								<td class="align-middle text-center">{{ dvd.getCategorie().getNom() }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

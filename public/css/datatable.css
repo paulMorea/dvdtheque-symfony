@@ -1,0 +1,117 @@
+/* NAVBAR */
+.navbar{
+    background-color: #FFF6EA;
+}
+/* DATABLES */
+input, select{
+    border: 1px solid #161616!important;
+}
+td{
+    color: #FFF6EA !important;
+    background-color: #161616  !important;
+    border: 1px solid #FFF6EA;
+}
+th{
+    color: #FFF6EA !important;
+    border: 2px solid #FFF6EA;
+    font-size: x-large;
+    font-family: monospace;
+}
+tbody{
+    border: 2px solid #FFF6EA !important;
+}
+.paginate_button.previous{
+    background-color: #161616 !important;
+    color: #FFF6EA !important;
+}
+#dvds_previous, #dvds_next{
+    background-color: #161616 !important;
+    color: #FFF6EA !important;
+}
+#dvds_current{
+    background-color: #161616 !important;
+    color: #FFF6EA !important;
+    
+}
+#containerUser{
+    border: 4px solid #161616;
+    background-color: #FFF6EA;
+}
+#rowTitle{
+    background-color: #161616;
+    color: #FFF6EA;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+#rowAdd{
+    color: #161616;
+    padding-top: 2vh;
+}
+
+#captionDvd{
+    color: #161616; 
+    text-decoration: underline;
+    font-weight: bolder;
+}
+@media (min-width: 1250px) {
+    #colData{
+        margin:0 10vh 0 10vh;
+    }
+}
+@media (max-width: 1250px) {
+    body{
+        font-size: x-large;
+    }
+}
+#dvds{
+    background-color: #161616;
+    -webkit-box-shadow: 0px 4px 9px 3px rgba(0, 0, 0, 0.9); 
+    box-shadow: 0px 4px 9px 3px rgba(0,0,0,0.9);
+}
+.dataTables_wrapper{
+    margin: 5vh 0 5vh 0;
+}
+@media (max-width: 1250px) {
+    .dataTables_wrapper{
+        margin:2vh 0 2vh 0;
+    }
+}
+label{
+    padding-bottom: 20%;
+    color: #161616;
+    opacity: 1;
+}
+.dataTables_info, .dataTables_paginate{
+    margin-top: 5%;
+}
+tr{
+    height: 10px;
+}
+#dvdTitle{
+    text-transform: uppercase;
+}
+#title{
+    color: #161616 !important;
+    background-color: #FFF6EA  !important;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 0 1vw 0 1vw;
+}
+#dvdRealisateur{
+    text-transform: capitalize;
+}
+.cover{
+    width: 200px;
+}
+.dtr-control{
+    background-color: #161616;
+}
+table{
+    border-collapse: collapse !important;
+}
+#logoAdmin{
+    width: 100px;
+}
+#logoIndex{
+    width: 150px;
+}

@@ -1,0 +1,24 @@
+body{
+    background-color: #FFF6EA;
+}
+/* NAVBAR */
+.navbar{
+    background-color:#FFF6EA;
+    color: #161616;
+    border-bottom: 5px solid #161616;
+}
+/* CONTAINER */
+#addContainer{
+    color: #FFF6EA;
+}
+#addRow{
+    background-color:#161616;
+    margin-top: 5vh;   
+}
+#addRow div{
+    margin: 2vh 0 2vh 0;
+}
+#dvd_form_save{
+    background-color:#FFF6EA;
+    color: #161616;
+}

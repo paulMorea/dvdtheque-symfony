@@ -1,0 +1,15 @@
+body{
+    background-color: #FFF6EA;
+}
+.row{
+    background-color:#161616;
+    color: #FFF6EA;
+    width: 60%;
+    padding: 2vh 0 2vh 0;
+    margin-top: 5vh;
+}
+.btn{
+    background-color: #FFF6EA;
+    color: #161616;
+    width: 25%;
+}

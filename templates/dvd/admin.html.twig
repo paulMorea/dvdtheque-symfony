@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset("css/datatable.css")}}">
+{% endblock %}
+
+{% block title %}Admin 
+{% endblock %}
+{% block body %}
+	{# NAVBAR #}
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{{ path('dvds_index') }}">ACCUEIL</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}">Déconnexion</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	{# CONTAINER #}
+	<div class="container-fluid" id="containerUser">
+		<div class="row" id='rowTitle'>
+			<h1 class='text-center'><img id='logoAdmin' src='{{asset("images/dvdtheque.png")}}'>ADMIN</h1>
+			<div class='col-12'>Bonjour
+				{{ app.user.username }} !</div>
+		</div>
+		<div class="row" id='rowAdd'>
+			<div class='col'><h4><i class="fa-solid fa-plus"></i> Ajouter un DVD : <a href="admin/add" class='btn btn-danger'>Ajouter</a></h4></div>
+		</div>
+		<table id='dvds' class='display responsive nowrap cell-border'>
+			<thead>
+				<tr>
+					<th class="text-center">Titre</th>
+					<th class="text-center">Date de sortie</th>
+					<th class="text-center">Réalisateur</th>
+					<th class="text-center">Durée</th>
+					<th class="text-center">Image</th>
+					<th class="text-center">Catégorie</th>
+					<th class="text-center">Modifier</th>
+					<th class="text-center">Supprimer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					{% for dvd in dvds %}
+						<td class="align-middle text-center">{{ dvd.getTitre() }}</td>
+						<td class="align-middle text-center">{{ dvd.getDate().format('Y-m-d') }}</td>
+						<td class="align-middle text-center">{{ dvd.getRealisateur() }}</td>
+						<td class="align-middle text-center">{{ dvd.getDescription()|raw }}</td>
+						<td class="align-middle text-center">{{ dvd.getCover() }}</td>
+						<td class="align-middle text-center">{{ dvd.getCategorie().getNom() }}</td>
+						<td class="align-middle text-center">
+							<a href="admin/edit/{{dvd.getId()}}" class='btn btn-info'>Modifier</a>
+						</td>
+						<td class="align-middle text-center">
+							<a href="admin/delete/{{dvd.getId()}}" class='btn btn-danger'>Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
